@@ -1,0 +1,12 @@
+[Unit]
+After=gdm.service
+ConditionPathExists=!/var/lib/u-firstbooted-post
+
+[Service]
+User=root
+Type=oneshot
+ExecStart=/usr/lib/u-firstboot/install-post.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

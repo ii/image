@@ -1,0 +1,13 @@
+[Unit]
+After=network-online.target
+ConditionPathExists=!/var/lib/u-firstbooted
+
+[Service]
+User=root
+Type=oneshot
+ExecStart=/usr/lib/u-firstboot/install.sh
+RemainAfterExit=yes
+TimeoutStopSec=10
+
+[Install]
+WantedBy=multi-user.target
