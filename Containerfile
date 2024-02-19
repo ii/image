@@ -13,7 +13,8 @@ RUN sed -i -e '0,/enabled=0/s//enabled=1/' /etc/yum.repos.d/fedora-updates-testi
     nc \
     cloud-utils \
     strace
-RUN bootupctl backend generate-update-metadata
+RUN bootupctl backend generate-update-metadata && \
+  echo -e '\n\nii ALL=(ALL) NOPASSWD:ALL\n\n' >> /etc/sudoers
 RUN flatpak remote-add --installation=image --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo && \
   flatpak install --installation=image -y org.mozilla.firefox \
   flatpak install --installation=image -y com.slack.Slack \
