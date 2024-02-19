@@ -17,14 +17,14 @@ rpm-ostree reset
 
 rebase to the image
 ```shell
-rpm-ostree rebase ostree-unverified-registry:ghcr.io/ii/image:stable
+rpm-ostree rebase ostree-unverified-registry:ghcr.io/ii/image:latest
 ```
 (as root)
 and reboot
 
 then rebase to the signed version
 ```shell
-rpm-ostree rebase ostree-image-signed:docker://ghcr.io/ii/image:stable
+rpm-ostree rebase ostree-image-signed:docker://ghcr.io/ii/image:latest
 ```
 
 ## Making changes
@@ -69,7 +69,7 @@ sudo podman run \
     -v $(pwd)/output:/output \
     quay.io/centos-bootc/bootc-image-builder:latest \
     --type qcow2 \
-    ghcr.io/ii/image:stable
+    ghcr.io/ii/image:latest
 ```
 
 to output to `./output/qcow2/disk.qcow2`.
@@ -83,7 +83,7 @@ sudo podman run \
   -e IMAGE_REPO="ghcr.io/ii" \
   -e IMAGE_NAME="image" \
   -e VARIANT="Silverblue" \
-  -e IMAGE_TAG="stable" \
+  -e IMAGE_TAG="latest" \
   ghcr.io/ublue-os/isogenerator
 ```
 

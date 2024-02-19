@@ -23,7 +23,7 @@ jobs:
         run: |
           # Generate a timestamp for creating an image version history
           TIMESTAMP="$(date +%Y%m%d)"
-          VERSION="stable"
+          VERSION="latest"
           BRANCH="${GITHUB_REF#refs/heads/}"
 
           COMMIT_TAGS=()
@@ -92,7 +92,7 @@ jobs:
           tags: |
             ${{ steps.generate-tags.outputs.alias_tags }}
           build-args: |
-            VERSION=stable
+            VERSION=latest
           labels: ${{ steps.meta.outputs.labels }}
           oci: false
 

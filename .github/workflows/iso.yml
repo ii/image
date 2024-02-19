@@ -12,7 +12,7 @@ jobs:
       ARCH: x86_64
       IMAGE_NAME: image
       IMAGE_REPO: ghcr.io/ii
-      IMAGE_TAG: stable
+      IMAGE_TAG: latest
       VARIANT: Silverblue
       VERSION: 39
       WEB_UI: false
