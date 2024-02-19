@@ -1,0 +1,18 @@
+---
+on:
+  push: {}
+  workflow_dispatch: {}
+permissions:
+  contents: read
+  packages: write
+jobs:
+  iso:
+    uses: ublue-os/isogenerator/.github/workflows/iso.yml@main
+    with:
+      ARCH: x86_64
+      IMAGE_NAME: image
+      IMAGE_REPO: ghcr.io/ii
+      IMAGE_TAG: stable
+      VARIANT: Silverblue
+      VERSION: 39
+      WEB_UI: false

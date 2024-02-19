@@ -1,0 +1,34 @@
+{
+  "ignition": { "version": "3.4.0" },
+  "systemd": {
+    "units": [
+      {
+        "name": "zincati.service",
+        "enabled": false
+      }
+    ]
+  },
+  "passwd": {
+    "users": [
+      {
+        "name": "ii",
+        "groups": ["wheel", "sudo"],
+        "passwordHash": "$6$pgxLlunraDUOf81x$azWB.xMr3oz7i0pLIsJZDdDdRqgxt5ND.sDRmemEG9TJtwWWexMr15mrgkCdtO5dEoW3MEfIEI17r77/.rvAT/",
+        "sshAuthorizedKeys": [
+          "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDfOBYW4JREdUNAUY7k/XWKzH4pdx5GI+IfI67iyak7dvnv0sk3mfVHtNounEQuwW06vRiYLmKAG6BP4i97uvNVfoOIOdUSoaqiM/Q3OMPNUykKqh3kliMgX/tJJEsC27HtiDxrkxmgXbflE/JKc+3pSAYsjJkbeWUb2jmcpH8N2OpxeOLLOUeqZfQNsXVXUbfWFK2IcXUJNXUbuzZ4GiLifEoUfppD37e7V3HpNF+zDFim+5g/CYhqfrmlJ1ZCP2UG2Y8AVHl4N4NP2VHXvhl1dU7GkulU+cBA3BV/WF2e8J3cQCl+OFfRmztGeG4xKQPacNjE73bYI14jTSLOqcvhjwMFkr8t0MUCxmlDj1Nua6f3Js7Ft0zILpI20A4stV7h8f41VIehtNL4O+S21ps5dXz8UWcw90RZOmLSp6FPjFpedGqZcBH8ytMyGFiT4eag3SKQeIjNK2mgeaLqZOD+sEqRVWaQ89EX/loliep53cspa6a6hCUfW7WNuJqBtIUv+z9jfdT+Hv6TiLCQ82uQEhEr1KiWgOfNO7auds1cEoippoxnG9q9+Acw6Fe8laK3L3blHHatjxuMAn4Fp5N5GKBh/GxKMhf1CbMET3Q8HkgkuQqN5pXT+aR/517PYfXTMoGFZHWd87HBGg2MdpxBFnZ5LiqV0ByJvvuigh6C7w==",
+
+          "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgEAsUXHYuDzE6fs2KkCj91qSqpMXyxozb9gDKcx3mlh87hCegevld75gQAhujVYGRgJLsdf7W0/lX81clCRP1FjbaYYrPkVWGR291U6K5rkL9kZqd9dC0h9iCvFTKdKC7sA/uaolFPWav3QFWdEp3geNNuAm/NKSckUs9yGgr1inANQNsHFl0JFzU34D2Kt43rKA0Qz3kkDKCnXzl+wltIKq5f1SH1HDlv0hoLgikVwg5CLLKCsZ8IFuxur1pdb26uM0vtFp2LJUNad6hK8RsU6p/NeTtOLjbKGsLkqCgSvoPxCAIbFKWIRuAfGd6CrNc2kAD4qM45jAvI9dLuzbopVfhXS16F0i3EzL8/VWuCk7l2mYRdjHAy+9fJksx1zx2wfeEXSoSUX8/ROxpWZaDA8gLAxUrp/hqHU351QDDEdunMfmlrGc6ixyIaxMugRuNsNB4eY91mmbiljeoSCs1GFbVRhC8KejdKpo266hSDdS7f1sV9dnxVhHBhCxWzN7+mfk4KzpjEVFoDR73X8IUOLGFikORl918i86bH2uqJ5zZLvOA4a0BqaRIExmAi7wQrm4iLcDH3THMpvEuy4965JZz1uPJYtGBD/Zj1O2sMA8K6zvSB/8q86fe1VdwIJxOHh50HqAH1jPHHfkxIdrL4nBmvF9Pkzpg/OWlyVjqWmWj0=",
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN4hvcd5Lz+gRiQfj2Ivd0prwPQqK89ZdiAhUd8H5opd",
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDqcBI91agn66cu13E+Hw9L/rLyyhVWkbXk3LUIMxbCl",
+          "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCbcEMbGT9zyI0PaqrmRiROcoPI9yUhBdQ4SqesOrI24SUFdWr5z+AaCu7UAO6SqwkQFuNc6E+qPTReMvdoWhGELCJ2+6p+tP8iZfwvESkj1zTayEj8TMN+spQ1EduCQBd/gXrmWP29NlBjJGVKMvV60lK4n1UWF1uHFzdW8vGyeMUp/L+ol3gbqbuCq1vsbrVKqdEsJyJq1WspVuMozu5rNVQY7qy1sK0QHTyKsXejutsxa8QHWS/iIhBuI90bn9+9J2TnmAvKnQMrJpAgxK66ZWP829hKEsVycnTzL0DivXwzTs/qFm6nBH5if7Y1l+iVALb6eO9qk+07boTjGrJ3SYH8WRpNwqnYfFBYJlrovkyzBscWK3tvYshMpgv1B2LC3r5plQ/Qj+V17m8aqS1xUsvz6MzqMghrr82wnel3zTHlp0H9iaLjFOW13YhvM8/Qoi1uydrDyQ1/8oL8v2wWm/Ni//j/yxz3ouoYidOw0ba88cDXfw8KNI7FRwhdYCk=",
+
+          "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCfoiFuPVEpAfWo0Nr/aOTbODuDAp2fgA7bXsi2NBciteHTrkxEdq4LLMlVqdwIoKn7nVPqhkn9RMPBU47KA498AIWfJpOSM/X75k5BeDc9lWdhERpbWx5SWdQiv/+aHL0De7yoWrCtO6/CcwBvdf+8jc5XKW/N8HLFJDOpG9OMl/Maht1/cqnqBERqtHyZoxW/2vDRkzaty0MPFF9qj0FfqFITR2qytZWX+xE3aLusB6002epITBsfJbrtUuOpiHsdaWkkCTVixf4hvojj5TzvClDMPefDbmkA2ee/gRey1KjVgTriMFuuzBuc+P+zMK3gLxF+DJkzvsvowMBwngrkSP0bLNggvNQUHl7ygHtw6hBAWiIHT4RJOftSpixfMpW4UyNWNj8c1A++bIAgECXyJGxfQFKWwiQU80DqWv/fJQpwj5QEyCzZcXpf33siddNo0fsk3J54DM2bsIU0IJx1QaPDRSYhdJlOkMBHOEO4fpP14b9V+IzhdQ0j1N9j825O/F15u1IoJ6T7BSkn9JirssaXio2iKduMmViVskwKHTtV7UKmgAlhdgiDbs86BlWvrDzPLTP9rmfhDvsl2V0Bd+9GzVzFHMECDmXGYp772psp9YD3PDNrYiBNoOJK4+GwhrbcHW3+b11iHKOZ9Z7t2MuY5+/dEXkWDPF9PFs7Xw==",
+
+          "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC/g2fJkKgrQEU1jTI136Tjw7QkQU2+8XhyuEoTY/lCQnDf/D8vHY73Thayry1UArNY4cN6ieWNu5ksLd1lIw/ZJiAE5EXOKIytHQ6R9bFWSManx8I4Sd3QSwY6TiTZ4i0kwdOWKrXBOLLnnXafUxFgRXK/ZjU2/EuNNsnWwyLTzxwl8OFw0y6quHUP5q3mEWlWvmzGvrxMsg+OpuXMx9fN3Od93PH2Zbg7u5fy6Ls7Q570cqciX2/WvKXFpVKZI+XNSCQpzkC2EX8PaUZbVzV98z35HGsSJjSRuCv/VGOryoURtn/fZohyycQYEp6iIQH2QIeDPPzseyuuKLB0s/hWGsvbxm0gMAu3K3n2pDkExVw+9F4Rg/YGLimIPnqyTezBUQ/9OZvPLFg/NeVnRKSa5sejbNx1yjsSaebCqxnslh44/EYeymYab7NTtb1It10mRfth7GEko5o3UYpNRRCzqvSjfMqFvVNUhwtsCE34y/hTFfR7385kL6b/TzjI61k=",
+
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPTQx7h973xXxT2RKd3LgrirS0JKkYrb33TIo0cnclWi"
+        ]
+      }
+    ]
+  }
+}
