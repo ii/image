@@ -8,6 +8,9 @@ permissions:
 jobs:
   iso:
     runs-on: ubuntu-latest
+    container:
+      image: fedora:39
+      options: --privileged
     steps:
       - uses: actions/checkout@473055ba18d6d2da209cd46110aadb9275e3194e
       - uses: ublue-os/isogenerator@a8cdedd915546b69c1e76036f85759b1f35cd029
