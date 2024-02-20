@@ -22,3 +22,5 @@ jobs:
           VARIANT: Silverblue
           VERSION: 39
           WEB_UI: false
+          ACTION_REPO: ublue-os/isogenerator
+          ACTION_REF: a8cdedd915546b69c1e76036f85759b1f35cd029
