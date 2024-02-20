@@ -7,7 +7,7 @@ permissions:
   packages: write
 jobs:
   iso:
-    uses: BobyMCbobs/ublue-os-isogenerator/.github/workflows/iso.yml@242ed7baebd8d219420d7e7417f7bd56aa9b5060 # TODO revert when merged
+    uses: ublue-os/isogenerator@main
     with:
       ARCH: x86_64
       IMAGE_NAME: image
