@@ -17,15 +17,9 @@ rpm-ostree reset
 
 rebase to the image
 ```shell
-rpm-ostree rebase ostree-unverified-registry:ghcr.io/ii/image:latest
-```
-(as root)
-and reboot
-
-then rebase to the signed version
-```shell
 rpm-ostree rebase ostree-image-signed:docker://ghcr.io/ii/image:latest
 ```
+(as root)
 
 ## Making changes
 

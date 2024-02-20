@@ -1,95 +1,100 @@
 {
-    "default": [
-        {
-            "type": "reject"
-        }
-    ],
-    "transports": {
-        "docker": {
-            "registry.access.redhat.com": [
-                {
-                    "type": "signedBy",
-                    "keyType": "GPGKeys",
-                    "keyPath": "/etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release"
-                }
-            ],
-            "registry.redhat.io": [
-                {
-                    "type": "signedBy",
-                    "keyType": "GPGKeys",
-                    "keyPath": "/etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release"
-                }
-            ],
-            "ghcr.io/ii": [
-                {
-                    "type": "sigstoreSigned",
-                    "keyPath": "/usr/etc/pki/containers/ii.pub",
-                    "signedIdentity": {
-                        "type": "matchRepository"
-                    }
-                }
-            ],
-            "": [
-                {
-                    "type": "insecureAcceptAnything"
-                }
-            ]
-        },
-        "docker-daemon": {
-            "": [
-                {
-                    "type": "insecureAcceptAnything"
-                }
-            ]
-        },
-        "atomic": {
-            "": [
-                {
-                    "type": "insecureAcceptAnything"
-                }
-            ]
-        },
-        "containers-storage": {
-            "": [
-                {
-                    "type": "insecureAcceptAnything"
-                }
-            ]
-        },
-        "dir": {
-            "": [
-                {
-                    "type": "insecureAcceptAnything"
-                }
-            ]
-        },
-        "oci": {
-            "": [
-                {
-                    "type": "insecureAcceptAnything"
-                }
-            ]
-        },
-        "oci-archive": {
-            "": [
-                {
-                    "type": "insecureAcceptAnything"
-                }
-            ]
-        },
-        "docker-archive": {
-            "": [
-                {
-                    "type": "insecureAcceptAnything"
-                }
-            ]
-        },
-        "tarball": {
-            "": [
-                {
-                    "type": "insecureAcceptAnything"
-                }
-            ]
-        }
+  "default": [
+    {
+      "type": "reject"
     }
+  ],
+  "transports": {
+    "docker": {
+      "registry.access.redhat.com": [
+        {
+          "type": "signedBy",
+          "keyType": "GPGKeys",
+          "keyPath": "/etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release"
+        }
+      ],
+      "registry.redhat.io": [
+        {
+          "type": "signedBy",
+          "keyType": "GPGKeys",
+          "keyPath": "/etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release"
+        }
+      ],
+      "ghcr.io/ii": [
+        {
+          "type": "sigstoreSigned",
+          "fulcio": {
+            "caData": "-----BEGIN CERTIFICATE-----\nMIIB9zCCAXygAwIBAgIUALZNAPFdxHPwjeDloDwyYChAO/4wCgYIKoZIzj0EAwMw\nKjEVMBMGA1UEChMMc2lnc3RvcmUuZGV2MREwDwYDVQQDEwhzaWdzdG9yZTAeFw0y\nMTEwMDcxMzU2NTlaFw0zMTEwMDUxMzU2NThaMCoxFTATBgNVBAoTDHNpZ3N0b3Jl\nLmRldjERMA8GA1UEAxMIc2lnc3RvcmUwdjAQBgcqhkjOPQIBBgUrgQQAIgNiAAT7\nXeFT4rb3PQGwS4IajtLk3/OlnpgangaBclYpsYBr5i+4ynB07ceb3LP0OIOZdxex\nX69c5iVuyJRQ+Hz05yi+UF3uBWAlHpiS5sh0+H2GHE7SXrk1EC5m1Tr19L9gg92j\nYzBhMA4GA1UdDwEB/wQEAwIBBjAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBRY\nwB5fkUWlZql6zJChkyLQKsXF+jAfBgNVHSMEGDAWgBRYwB5fkUWlZql6zJChkyLQ\nKsXF+jAKBggqhkjOPQQDAwNpADBmAjEAj1nHeXZp+13NWBNa+EDsDP8G1WWg1tCM\nWP/WHPqpaVo0jhsweNFZgSs0eE7wYI4qAjEA2WB9ot98sIkoF3vZYdd3/VtWB5b9\nTNMea7Ix/stJ5TfcLLeABLE4BNJOsQ4vnBHJ\n-----END CERTIFICATE-----\n",
+            "oidcIssuer": "https://token.actions.githubusercontent.com",
+            "subjectEmail": "https://github.com/ii/image/.github/workflows/build.yml@refs/heads/main"
+          },
+          "rekorPublicKeyData": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE2G2Y+2tabdTV5BcGiBIx0a9fAFwr\nkBbmLSGtks4L3qX6yYY0zufBnhC8Ur/iy55GhWP/9A/bY2LhC30M9+RYtw==\n-----END PUBLIC KEY-----\n",
+          "signedIdentity": {
+            "type": "matchRepository"
+          }
+        }
+      ],
+      "": [
+        {
+          "type": "insecureAcceptAnything"
+        }
+      ]
+    },
+    "docker-daemon": {
+      "": [
+        {
+          "type": "insecureAcceptAnything"
+        }
+      ]
+    },
+    "atomic": {
+      "": [
+        {
+          "type": "insecureAcceptAnything"
+        }
+      ]
+    },
+    "containers-storage": {
+      "": [
+        {
+          "type": "insecureAcceptAnything"
+        }
+      ]
+    },
+    "dir": {
+      "": [
+        {
+          "type": "insecureAcceptAnything"
+        }
+      ]
+    },
+    "oci": {
+      "": [
+        {
+          "type": "insecureAcceptAnything"
+        }
+      ]
+    },
+    "oci-archive": {
+      "": [
+        {
+          "type": "insecureAcceptAnything"
+        }
+      ]
+    },
+    "docker-archive": {
+      "": [
+        {
+          "type": "insecureAcceptAnything"
+        }
+      ]
+    },
+    "tarball": {
+      "": [
+        {
+          "type": "insecureAcceptAnything"
+        }
+      ]
+    }
+  }
 }

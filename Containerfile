@@ -2,7 +2,6 @@ ARG VERSION="${VERSION:-latest}"
 FROM ghcr.io/ublue-os/silverblue-main:${VERSION}
 ARG FLATPAKS_INSTALL=true
 COPY files /
-COPY cosign.pub /usr/etc/pki/containers/ii.pub
 RUN sed -i -e '0,/enabled=0/s//enabled=1/' /etc/yum.repos.d/fedora-updates-testing.repo && \
   rpm-ostree install \
     vim \
