@@ -15,7 +15,11 @@ RUN sed -i -e '0,/enabled=0/s//enabled=1/' /etc/yum.repos.d/fedora-updates-testi
     nc \
     cloud-utils \
     strace \
-    docker
+    docker \
+    bootc \
+    osbuild-selinux \
+    qemu \
+    libvirt
 RUN bootupctl backend generate-update-metadata && \
   echo -e '\n\nii ALL=(ALL) NOPASSWD:ALL\n\n' >> /etc/sudoers
 COPY --from=cgr.dev/chainguard/dive:latest /usr/bin/dive /usr/bin/dive
