@@ -20,7 +20,8 @@ RUN sed -i -e '0,/enabled=0/s//enabled=1/' /etc/yum.repos.d/fedora-updates-testi
     --install=bootc \
     --install=osbuild-selinux \
     --install=qemu \
-    --install=libvirt
+    --install=libvirt \
+    --install=virt-manager
 RUN bootupctl backend generate-update-metadata && \
   echo -e '\n\nii ALL=(ALL) NOPASSWD:ALL\n\n' >> /etc/sudoers
 COPY --from=cgr.dev/chainguard/dive:latest /usr/bin/dive /usr/bin/dive
