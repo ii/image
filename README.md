@@ -84,6 +84,10 @@ sudo podman run \
   -e IMAGE_NAME="image" \
   -e VARIANT="Silverblue" \
   -e IMAGE_TAG="latest" \
+  -e VERSION="39" \
+  -e ARCH=x86_64 \
+  -e ACTION_REPO=ublue-os/isogenerator \
+  -e ACTION_REF=a8cdedd915546b69c1e76036f85759b1f35cd029 \
   ghcr.io/ublue-os/isogenerator
 ```
 
