@@ -7,6 +7,9 @@ RUN sed -i -e '0,/enabled=0/s//enabled=1/' /etc/yum.repos.d/fedora-updates-testi
   rpm-ostree override remove \
     firefox \
     firefox-langpacks \
+    gnome-software-rpm-ostree \
+    gnome-extensions-app \
+    gnome-tour \
     --install=vim \
     --install=gdisk \
     --install=bootupd \
