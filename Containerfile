@@ -8,7 +8,6 @@ RUN sed -i -e '0,/enabled=0/s//enabled=1/' /etc/yum.repos.d/fedora-updates-testi
     firefox \
     firefox-langpacks \
     gnome-software-rpm-ostree \
-    gnome-extensions-app \
     gnome-tour \
     --install=vim \
     --install=gdisk \
@@ -23,7 +22,7 @@ RUN sed -i -e '0,/enabled=0/s//enabled=1/' /etc/yum.repos.d/fedora-updates-testi
     --install=docker \
     --install=bootc \
     --install=osbuild-selinux \
-    --install=nc \
+    --install=netcat \
     --install=qemu \
     --install=libvirt \
     --install=virt-manager
