@@ -4,22 +4,23 @@ ARG FLATPAKS_INSTALL=true
 COPY files /
 COPY cosign.pub /usr/etc/pki/containers/ii.pub
 RUN sed -i -e '0,/enabled=0/s//enabled=1/' /etc/yum.repos.d/fedora-updates-testing.repo && \
-  rpm-ostree install \
-    vim \
-    gdisk \
-    bootupd \
-    grub2 \
-    ostree-grub2 \
-    grub2-efi-x64 \
-    efibootmgr \
-    nc \
-    cloud-utils \
-    strace \
-    docker \
-    bootc \
-    osbuild-selinux \
-    qemu \
-    libvirt
+  rpm-ostree override remove \
+    firefox \
+    --install=vim \
+    --install=gdisk \
+    --install=bootupd \
+    --install=grub2 \
+    --install=ostree-grub2 \
+    --install=grub2-efi-x64 \
+    --install=efibootmgr \
+    --install=nc \
+    --install=cloud-utils \
+    --install=strace \
+    --install=docker \
+    --install=bootc \
+    --install=osbuild-selinux \
+    --install=qemu \
+    --install=libvirt
 RUN bootupctl backend generate-update-metadata && \
   echo -e '\n\nii ALL=(ALL) NOPASSWD:ALL\n\n' >> /etc/sudoers
 COPY --from=cgr.dev/chainguard/dive:latest /usr/bin/dive /usr/bin/dive
