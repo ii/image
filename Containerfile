@@ -23,6 +23,7 @@ RUN sed -i -e '0,/enabled=0/s//enabled=1/' /etc/yum.repos.d/fedora-updates-testi
     --install=docker \
     --install=bootc \
     --install=osbuild-selinux \
+    --install=nc \
     --install=qemu \
     --install=libvirt \
     --install=virt-manager
