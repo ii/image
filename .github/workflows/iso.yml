@@ -5,17 +5,25 @@ on:
 permissions:
   contents: read
   packages: write
+  id-token: write
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
+  cancel-in-progress: true
 jobs:
   iso:
     runs-on: ubuntu-latest
     container:
       image: fedora:39
       options: --privileged
+      env:
+        GITHUB_HOST: ${{ github.server_url }}
+        ACTIONS_ID_TOKEN_REQUEST_TOKEN: ${{ env.ACTIONS_ID_TOKEN_REQUEST_TOKEN }}
+        ACTIONS_ID_TOKEN_REQUEST_URL: ${{ env.ACTIONS_ID_TOKEN_REQUEST_URL }}
       volumes:
         - /:/host
     steps:
       - uses: actions/checkout@473055ba18d6d2da209cd46110aadb9275e3194e
-      - uses: ublue-os/isogenerator@e36da208a85c42dff07a95aafd80c6decfa52be8
+      - uses: ublue-os/isogenerator@1.0.5
         with:
           ARCH: x86_64
           IMAGE_NAME: image
@@ -23,6 +31,5 @@ jobs:
           IMAGE_TAG: latest
           VARIANT: Silverblue
           VERSION: 39
-          WEB_UI: false
           ACTION_REPO: ublue-os/isogenerator
-          ACTION_REF: e36da208a85c42dff07a95aafd80c6decfa52be8
+          ACTION_REF: 1.0.5
