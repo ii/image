@@ -1,5 +1,5 @@
 ARG VERSION="${VERSION:-latest}"
-FROM ghcr.io/ublue-os/silverblue-main:${VERSION}
+FROM ghcr.io/ublue-os/bluefin:${VERSION}
 ARG FLATPAKS_INSTALL=true
 COPY files /
 COPY cosign.pub /usr/etc/pki/containers/ii.pub
