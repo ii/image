@@ -4,28 +4,24 @@ ARG FLATPAKS_INSTALL=true
 COPY files /
 COPY cosign.pub /usr/etc/pki/containers/ii.pub
 RUN sed -i -e '0,/enabled=0/s//enabled=1/' /etc/yum.repos.d/fedora-updates-testing.repo && \
-  rpm-ostree override remove \
-    firefox \
-    firefox-langpacks \
-    gnome-software-rpm-ostree \
-    gnome-tour \
-    --install=vim \
-    --install=gdisk \
-    --install=bootupd \
-    --install=grub2 \
-    --install=ostree-grub2 \
-    --install=grub2-efi-x64 \
-    --install=efibootmgr \
-    --install=nc \
-    --install=cloud-utils \
-    --install=strace \
-    --install=docker \
-    --install=bootc \
-    --install=osbuild-selinux \
-    --install=netcat \
-    --install=qemu \
-    --install=libvirt \
-    --install=virt-manager
+  rpm-ostree install \
+    vim \
+    gdisk \
+    bootupd \
+    grub2 \
+    ostree-grub2 \
+    grub2-efi-x64 \
+    efibootmgr \
+    nc \
+    cloud-utils \
+    strace \
+    docker \
+    bootc \
+    osbuild-selinux \
+    netcat \
+    qemu \
+    libvirt \
+    virt-manager
 RUN bootupctl backend generate-update-metadata && \
   echo -e '\n\nii ALL=(ALL) NOPASSWD:ALL\n\n' >> /etc/sudoers
 COPY --from=cgr.dev/chainguard/dive:latest /usr/bin/dive /usr/bin/dive
