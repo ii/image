@@ -23,7 +23,7 @@ jobs:
         - /:/host
     steps:
       - uses: actions/checkout@473055ba18d6d2da209cd46110aadb9275e3194e
-      - uses: ublue-os/isogenerator@1.0.5
+      - uses: ublue-os/isogenerator@1.0.9
         with:
           ARCH: x86_64
           IMAGE_NAME: image
@@ -31,5 +31,3 @@ jobs:
           IMAGE_TAG: latest
           VARIANT: Silverblue
           VERSION: 39
-          ACTION_REPO: ublue-os/isogenerator
-          ACTION_REF: 1.0.5
