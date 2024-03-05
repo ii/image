@@ -21,7 +21,8 @@ RUN sed -i -e '0,/enabled=0/s//enabled=1/' /etc/yum.repos.d/fedora-updates-testi
     netcat \
     qemu \
     libvirt \
-    virt-manager
+    virt-manager \
+    java-17-openjdk
 RUN bootupctl backend generate-update-metadata && \
   echo -e '\n\nii ALL=(ALL) NOPASSWD:ALL\n\n' >> /etc/sudoers
 COPY --from=cgr.dev/chainguard/dive:latest /usr/bin/dive /usr/bin/dive
@@ -37,7 +38,12 @@ RUN wget https://github.com/docker/compose/releases/latest/download/docker-compo
     install -c -m 0755 /tmp/docker-compose /usr/bin
 RUN systemctl enable docker.socket && \
     systemctl enable podman.socket
+RUN mkdir minecraftforge && \
+    cd minecraftforge && \
+    wget "https://maven.minecraftforge.net/net/minecraftforge/forge/1.19-41.1.0/forge-1.19-41.1.0-mdk.zip" -O temp.zip && \
+    unzip temp.zip && \
+    rm temp.zip
 RUN [ "$FLATPAKS_INSTALL" = "true" ] && flatpak remote-add --installation=image --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo && \
-  flatpak install --installation=image -y org.mozilla.firefox net.sonic_pi.SonicPi edu.mit.Scratch
+  flatpak install --installation=image -y org.mozilla.firefox net.sonic_pi.SonicPi edu.mit.Scratch org.eclipse.Java
 RUN rm -fr /tmp/* /var/* \
     && ostree container commit
